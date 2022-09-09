@@ -1,0 +1,20 @@
+{
+  "name": "progect2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.andrii-ilutsa.me/Alexandr/progect-git.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "3.9.0",
+    "gulp-less": "*",
+    "browser-sync": "*"
+  }
+}

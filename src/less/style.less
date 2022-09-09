@@ -1,0 +1,243 @@
+//out: ../css/style.css
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: "Tahoma";
+}
+h1, h2, h3, h4, h5, h6, ul, li, a, span, p, div {
+	margin: 0;
+	padding: 0;
+	font-family: "Tahoma";
+	font-size: 14px;
+	font-weight: normal;
+	list-style: none;
+	text-decoration: none;
+	color: #000;
+    
+}
+
+@primaryColor: #f39c12;
+@background: #16a085;
+
+.area{
+    background-color: @background;
+    display: flex;
+    width: 100%;
+    height: 800px;
+    position: relative;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .note{
+        background-color: #ccc;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: 280px;
+        height: 280px;
+        border-radius: 5px;
+        cursor: pointer;
+        user-select: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &.active{
+            display: none;
+        }
+
+        .info{
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: space-evenly;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #000;
+            background-color: #ccc;
+            padding-top: 6px;
+            border-radius: 5px 5px 0 0;
+            position: relative;
+
+            .id{
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                text-align: center;
+
+                &::after{
+                    content: ' ';
+                    position: absolute;
+                    top: 18px;
+                    bottom: 0;
+                    right: 0;
+                    left: 20px;
+                    display: block;
+                    height: 1px;
+                    background-color: #000;
+                    width: 50px;
+                    transform: rotate(90deg)
+                }
+            }
+            .name{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                position: relative;
+
+                .nameContainer{
+                    width: 60px;
+                    height: 15px;
+                    margin-left: 10px;
+                    resize: none;
+                    outline: none;
+                    border: none;
+                    background-color: #ccc;
+                    &:hover{
+                        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+                    }
+                }
+                &::after{
+                    content: ' ';
+                    position: absolute;
+                    top: 18px;
+                    bottom: 0;
+                    right: 0;
+                    left: 60px;
+                    display: block;
+                    height: 1px;
+                    background-color: #000;
+                    width: 50px;
+                    transform: rotate(90deg)
+                }
+            }
+            .group{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                .groupContainer{
+                    width: 70px;
+                    height: 15px;
+                    resize: none;
+                    outline: none;
+                    border: none;
+                    background-color: #ccc;
+                    &:hover{
+                        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+                    }
+                }
+            }
+            .close{
+                display: inline-block;
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                background-color: #000;
+                border-radius: 100%;
+                width: 20px;
+                height: 20px;
+                color: #fff;
+                line-height: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+                cursor: pointer;
+                user-select: none;
+            }  
+        }
+        .text{
+            background-color: @primaryColor;
+            width: 90%;
+            height: 80%;
+            resize: none;
+            margin: 0;
+            padding: 0;
+            outline: none;
+            border: none;
+            padding-top: 5px;
+            &:hover{
+                box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+            }
+        }
+    }
+}
+.buttonAdd{
+    position: fixed;
+    right: 20px;
+    top: 700px;
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 100%;
+    cursor: pointer;
+    user-select: none;
+}
+.container-group{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background-color: #fff;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    height: 75px;
+    width: 150px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+    &.active{
+        height: auto;
+    }
+
+    h1{
+        font-size: 18px;
+        padding-bottom: 10px;
+    }
+
+    .containerGenerateGroup{
+        width: 90%;
+        height: auto;
+        display: none;
+        overflow: auto;
+
+        &.active{
+            display: inline-block;
+            height: 150px;
+        }
+
+        .generate-group{
+            width: 100%;
+            height: auto;
+            padding: 5px 0;
+            box-sizing: border-box;
+    
+            label{
+                font-size: 16px;
+                line-height: 1.4;
+            }
+        }
+    }
+    .image{
+        img{
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            user-select: none;
+            &.active{
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
